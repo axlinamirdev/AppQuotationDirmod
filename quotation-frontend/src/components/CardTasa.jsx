@@ -1,14 +1,11 @@
 import React from "react"
 
-import { useSelector } from "react-redux"
 
-const CardTasa = () => {
-	const tasaDolar = useSelector((state) => state.tasaReducer.tasaDolar)
-	console.log(tasaDolar)
+const CardTasa = ({ moneda, precio}) => {
 	return (
 		<div>
-	        <p>{tasaDolar.moneda}</p>
-	        <p>{tasaDolar.precio}</p>
+	        <p>{moneda}</p>
+	        <p>{precio}</p>
 	      </div>
 	)
 }
