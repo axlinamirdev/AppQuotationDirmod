@@ -20,19 +20,19 @@ namespace quotation_backend.Controllers
         [HttpGet("{moneda}", Name = "Get")]
         public async Task<Cotizar> Get(string moneda)
         {
-            TasaCalcularContext cotizarTasa = null;
+            TasaCotizarContext cotizarTasa = null;
             var httpClient = GetHttpClient();
 
             switch(moneda)
             {
                 case Parametro.monedaDolar:
-                    cotizarTasa = new TasaCalcularContext(new TasaDolar());
+                    cotizarTasa = new TasaCotizarContext(new TasaDolar());
                     break;
                 case Parametro.monedaEuro:
-                    cotizarTasa = new TasaCalcularContext(new TasaEuro());
+                    cotizarTasa = new TasaCotizarContext(new TasaEuro());
                     break;
                 case Parametro.monedaReal:
-                    cotizarTasa = new TasaCalcularContext(new TasaReal());
+                    cotizarTasa = new TasaCotizarContext(new TasaReal());
                     break;
             }
             Cotizar tasa = await cotizarTasa.GetTasa(httpClient, moneda);

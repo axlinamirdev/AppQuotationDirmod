@@ -24,7 +24,7 @@ namespace quotation_backend.Controllers
 
             var httpClient = GetHttpClient();
 
-            var calcular = new TasaCalcularContext(new TasaDolar());
+            var calcular = new TasaCotizarContext(new TasaDolar());
             var junior = await calcular.GetTasa(httpClient, "dolar");
             return junior;
 

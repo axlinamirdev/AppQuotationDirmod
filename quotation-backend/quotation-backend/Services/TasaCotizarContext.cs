@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace quotation_backend.Services
 {
-    public class TasaCalcularContext
+    public class TasaCotizarContext
     {
         private ITasaCotizacion _cotizacion;
 
-        public TasaCalcularContext(ITasaCotizacion cotizacion) => _cotizacion = cotizacion;
+        public TasaCotizarContext(ITasaCotizacion cotizacion) => _cotizacion = cotizacion;
 
         public async Task<Cotizar> GetTasa(HttpClient httpClient, string nameMoneda) => await _cotizacion.GetTasa(httpClient, nameMoneda);
 
