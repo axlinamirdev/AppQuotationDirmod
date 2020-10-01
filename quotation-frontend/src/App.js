@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react';
-import CardTasa from "./components/CardTasa"
+import React, { useEffect } from 'react'
+import moment from 'moment'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
-import moment from 'moment'
+
+
+import CardTasa from "./components/CardTasa"
+import CardBody from "./components/CardBody"
 
 import { useDispatch, useSelector } from "react-redux"
 import { fetchTasaDolar, fetchTasaEuro, fetchTasaReal } from "./actions/tasaAction"
+
 
 function App() {
   const dispatch = useDispatch()
@@ -15,7 +19,10 @@ function App() {
           tasaReal,
           loadingDolar, 
           loadingEuro, 
-          loadingReal 
+          loadingReal,
+          errorDolar,
+          errorEuro,
+          errorReal 
         } = useSelector((state) => state.tasaReducer)
 
   useEffect(() => {
@@ -49,9 +56,27 @@ function App() {
           </div>
 
           <div className="row d-flex justify-content-center pt-5 pb-5">
-            <CardTasa loading={loadingDolar} {...tasaDolar} />
-            <CardTasa loading={loadingEuro} {...tasaEuro} />
-            <CardTasa loading={loadingReal} {...tasaReal} />
+            <CardTasa moneda={tasaDolar.moneda} >
+              <CardBody
+                      precio={tasaDolar.precio}
+                      loading={loadingDolar}
+                      error={errorDolar}
+                     />
+            </CardTasa>
+            <CardTasa moneda={tasaEuro.moneda} >
+                <CardBody
+                      precio={tasaEuro.precio}
+                      loading={loadingEuro}
+                      error={errorEuro}
+                     />
+            </CardTasa>
+            <CardTasa moneda={tasaReal.moneda} >
+                <CardBody
+                      precio={tasaReal.precio}
+                      loading={loadingReal}
+                      error={errorReal}
+                     />
+            </CardTasa>
           </div>
 
           <div className="row">

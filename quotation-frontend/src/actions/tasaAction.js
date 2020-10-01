@@ -5,7 +5,10 @@ import {
 	ERROR_COTIZAR,
 	LOADING_DOLAR,
 	LOADING_EURO,
-	LOADING_REAL
+	LOADING_REAL,
+	ERROR_COTIZAR_DOLAR,
+	ERROR_COTIZAR_EURO,
+	ERROR_COTIZAR_REAL
 } from "../types/tasaType"
 
 export const fetchTasaDolar = () => (dispatch, getState) => {
@@ -23,8 +26,8 @@ export const fetchTasaDolar = () => (dispatch, getState) => {
         })
         .catch(error => {
             dispatch({
-				type:ERROR_COTIZAR,
-				payload: "No se encontro la tasa"
+				type:ERROR_COTIZAR_DOLAR,
+				payload: "No se encontró la tasa"
 			})
         })
 }
@@ -44,8 +47,8 @@ export const fetchTasaEuro = () => (dispatch, getState) => {
         })
         .catch(error => {
             dispatch({
-				type:ERROR_COTIZAR,
-				payload: "No se encontro la tasa"
+				type:ERROR_COTIZAR_EURO,
+				payload: "No se encontró la tasa"
 			})
         })
 }
@@ -65,8 +68,8 @@ export const fetchTasaReal = () => (dispatch, getState) => {
         })
         .catch(error => {
             dispatch({
-				type:ERROR_COTIZAR,
-				payload: "No se encontro la tasa"
+				type:ERROR_COTIZAR_REAL,
+				payload: "No se encontró la tasa"
 			})
         })
 }

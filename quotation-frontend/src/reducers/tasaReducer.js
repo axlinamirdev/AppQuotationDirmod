@@ -5,17 +5,22 @@ import {
 	ERROR_COTIZAR,
 	LOADING_DOLAR,
 	LOADING_EURO,
-	LOADING_REAL
+	LOADING_REAL,
+	ERROR_COTIZAR_DOLAR,
+	ERROR_COTIZAR_EURO,
+	ERROR_COTIZAR_REAL
 } from "../types/tasaType"
 
 const INITIAL_STATE = {
 	loadingDolar: false,
 	tasaDolar: {moneda: "dolar", precio: 0},
+	errorDolar:"",
 	loadingEuro: false,
 	tasaEuro: {moneda: "euro", precio: 0},
+	errorEuro:"",
 	loadingReal: false,
 	tasaReal: {moneda: "real", precio: 0},
-	error: ""
+	errorReal: ""
 }
 
 export default (state=INITIAL_STATE, action) => {
@@ -24,19 +29,22 @@ export default (state=INITIAL_STATE, action) => {
 			return {
 				...state,
 				tasaDolar: action.payload,
-				loadingDolar: false
+				loadingDolar: false,
+				errorDolar: ""
 			}
 		case COTIZAR_EURO:
 			return {
 				...state,
 				tasaEuro: action.payload,
-				loadingEuro: false
+				loadingEuro: false,
+				errorEuro: ""
 			}
 		case COTIZAR_REAL:
 			return {
 				...state,
 				tasaReal: action.payload,
-				loadingReal: false
+				loadingReal: false,
+				errorReal:""
 			}
 		case LOADING_DOLAR:
 			return {
@@ -53,11 +61,23 @@ export default (state=INITIAL_STATE, action) => {
 				...state,
 				loadingReal: true
 			}
-		case ERROR_COTIZAR:
+		case ERROR_COTIZAR_DOLAR:
 			return {
 				...state,
-				loading: false,
-				error: action.payload
+				loadingDolar: false,
+				errorDolar: action.payload
+			}
+		case ERROR_COTIZAR_EURO:
+			return {
+				...state,
+				loadingEuro: false,
+				errorEuro: action.payload
+			}
+		case ERROR_COTIZAR_REAL:
+			return {
+				...state,
+				loadingReal: false,
+				errorReal: action.payload
 			}
 		default: return state
 	}
