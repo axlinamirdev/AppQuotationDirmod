@@ -2,3 +2,7 @@ export const COTIZAR_DOLAR = "COTIZAR_DOLAR"
 export const COTIZAR_EURO = "COTIZAR_EURO"
 export const COTIZAR_REAL = "COTIZAR_REAL"
 export const ERROR_COTIZAR = "ERROR_COTIZAR"
+
+export const LOADING_DOLAR = "LOADING_DOLAR"
+export const LOADING_EURO = "LOADING_EURO"
+export const LOADING_REAL = "LOADING_REAL"
