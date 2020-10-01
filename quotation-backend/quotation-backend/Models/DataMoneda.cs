@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace quotation_backend.Models
 {
-    public class Result
+    public class DataMoneda
     {
         public DateTime Updated { get; set; }
         public string Source { get; set; }

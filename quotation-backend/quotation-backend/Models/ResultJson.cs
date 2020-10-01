@@ -7,9 +7,7 @@ namespace quotation_backend.Models
 {
     public class ResultJson
     {
-        //public string Result { get; set; }
-
-        public Result Result { get; set; }
+        public DataMoneda Result { get; set; }
         public string Status { get; set; }
     }
 }

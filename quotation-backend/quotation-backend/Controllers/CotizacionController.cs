@@ -11,6 +11,7 @@ using quotation_backend.Services;
 
 namespace quotation_backend.Controllers
 {
+    [Produces("application/json")]
     [Route("/[controller]")]
     [ApiController]
     public class CotizacionController : ControllerBase

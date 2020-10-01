@@ -11,15 +11,14 @@ namespace quotation_backend.Services
     {
         public async Task<Cotizar> GetTasa(HttpClient httpClient, string nameMoneda)
         {
-            string requestEndpoint = "REAL";
+            string requestEndpoint = $"REAL/{Parametro.claveApi}";
 
-            ResultJson product = null;
             Cotizar cotizar = null;
-            HttpResponseMessage response = await httpClient.GetAsync(requestEndpoint + Parametro.claveApi);
+            HttpResponseMessage response = await httpClient.GetAsync(requestEndpoint);
             if (response.IsSuccessStatusCode)
             {
-                product = await response.Content.ReadAsAsync<ResultJson>();
-                cotizar = new Cotizar { Moneda = nameMoneda, Precio = product.Result.Value };
+                ResultJson resultado = await response.Content.ReadAsAsync<ResultJson>();
+                cotizar = new Cotizar { Moneda = nameMoneda, Precio = resultado.Result.Value };
             }
             return cotizar;
         }
