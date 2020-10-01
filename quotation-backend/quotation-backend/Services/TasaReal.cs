@@ -11,7 +11,7 @@ namespace quotation_backend.Services
     {
         public async Task<Cotizar> GetTasa(HttpClient httpClient, string nameMoneda)
         {
-            string requestEndpoint = $"REAL/{Parametro.claveApi}";
+            string requestEndpoint = $"BRL/{Parametro.claveApi}";
 
             Cotizar cotizar = null;
             HttpResponseMessage response = await httpClient.GetAsync(requestEndpoint);

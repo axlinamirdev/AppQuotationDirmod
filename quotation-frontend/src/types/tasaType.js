@@ -1,0 +1,4 @@
+export const COTIZAR_DOLAR = "COTIZAR_DOLAR"
+export const COTIZAR_EURO = "COTIZAR_EURO"
+export const COTIZAR_REAL = "COTIZAR_REAL"
+export const ERROR_COTIZAR = "ERROR_COTIZAR"
