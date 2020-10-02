@@ -25,18 +25,14 @@ function App() {
         } = useSelector((state) => state.tasaReducer)
 
   useEffect(() => {
-      /**setInterval(
+      setInterval(
         () => {
           dispatch(fetchTasaDolar())
           dispatch(fetchTasaEuro())
           dispatch(fetchTasaReal())
         },
         5000
-      )**/
-
-      dispatch(fetchTasaDolar())
-      dispatch(fetchTasaEuro())
-      dispatch(fetchTasaReal())
+      )
   }, [dispatch])
 
   return (
