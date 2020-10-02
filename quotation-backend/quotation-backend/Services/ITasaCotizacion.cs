@@ -9,6 +9,6 @@ namespace quotation_backend.Services
 {
     public interface ITasaCotizacion
     {
-        Task<Cotizar> GetTasa(HttpClient httpClient, string nameMoneda);
+        Task<Cotizar> GetTasa(HttpClient httpClient);
     }
 }

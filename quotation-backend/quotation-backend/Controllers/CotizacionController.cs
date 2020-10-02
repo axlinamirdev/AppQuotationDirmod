@@ -16,7 +16,7 @@ namespace quotation_backend.Controllers
     [ApiController]
     public class CotizacionController : ControllerBase
     {
-        // GET: api/Cotizacion/moneda
+        // GET: /Cotizacion/moneda
         [HttpGet("{moneda}", Name = "Get")]
         public async Task<Cotizar> Get(string moneda)
         {
@@ -35,7 +35,7 @@ namespace quotation_backend.Controllers
                     cotizarTasa = new TasaCotizarContext(new TasaReal());
                     break;
             }
-            Cotizar tasa = await cotizarTasa.GetTasa(httpClient, moneda);
+            Cotizar tasa = await cotizarTasa.GetTasa(httpClient);
             return tasa;            
         }
 

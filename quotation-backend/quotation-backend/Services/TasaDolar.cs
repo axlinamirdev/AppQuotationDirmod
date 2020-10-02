@@ -9,7 +9,7 @@ namespace quotation_backend.Services
 {
     public class TasaDolar : ITasaCotizacion
     {
-        public async Task<Cotizar> GetTasa(HttpClient httpClient, string nameMoneda)
+        public async Task<Cotizar> GetTasa(HttpClient httpClient)
         {
             string requestEndpoint = $"USD/{Parametro.claveApi}";
 
@@ -18,7 +18,7 @@ namespace quotation_backend.Services
             if (response.IsSuccessStatusCode)
             {
                 ResultJson resultado = await response.Content.ReadAsAsync<ResultJson>();
-                cotizar = new Cotizar { Moneda = nameMoneda, Precio = resultado.Result.Value };
+                cotizar = new Cotizar { Moneda = Parametro.monedaDolar, Precio = resultado.Result.Value };
             }
             return cotizar;
         }

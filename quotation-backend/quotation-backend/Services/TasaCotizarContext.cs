@@ -13,7 +13,7 @@ namespace quotation_backend.Services
 
         public TasaCotizarContext(ITasaCotizacion cotizacion) => _cotizacion = cotizacion;
 
-        public async Task<Cotizar> GetTasa(HttpClient httpClient, string nameMoneda) => await _cotizacion.GetTasa(httpClient, nameMoneda);
+        public async Task<Cotizar> GetTasa(HttpClient httpClient) => await _cotizacion.GetTasa(httpClient);
 
     }
 }
