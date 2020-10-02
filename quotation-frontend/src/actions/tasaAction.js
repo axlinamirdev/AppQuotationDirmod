@@ -1,8 +1,8 @@
+import API from "../config/api"
 import { 
 	COTIZAR_DOLAR, 
 	COTIZAR_EURO, 
 	COTIZAR_REAL,
-	ERROR_COTIZAR,
 	LOADING_DOLAR,
 	LOADING_EURO,
 	LOADING_REAL,
@@ -16,8 +16,8 @@ export const fetchTasaDolar = () => (dispatch, getState) => {
 	dispatch({
 			type:LOADING_DOLAR
 		}) 
-	fetch(`https://localhost:44301/cotizacion/dolar`)
-        .then(response => response.json())
+
+    API.get("dolar")
         .then(data => {
         	dispatch({
 					type:COTIZAR_DOLAR,
@@ -37,13 +37,13 @@ export const fetchTasaEuro = () => (dispatch, getState) => {
 	dispatch({
 			type:LOADING_EURO
 		}) 
-	fetch(`https://localhost:44301/cotizacion/euro`)
-        .then(response => response.json())
+
+	API.get("euro")
         .then(data => {
-        	dispatch({
-					type:COTIZAR_EURO,
-					payload: data
-				})          
+    		dispatch({
+				type:COTIZAR_EURO,
+				payload: data
+			})      	       
         })
         .catch(error => {
             dispatch({
@@ -58,8 +58,8 @@ export const fetchTasaReal = () => (dispatch, getState) => {
 	dispatch({
 			type:LOADING_REAL
 		}) 
-	fetch(`https://localhost:44301/cotizacion/real`)
-        .then(response => response.json())
+
+	API.get("real")
         .then(data => {
         	dispatch({
 					type:COTIZAR_REAL,

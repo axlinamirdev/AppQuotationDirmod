@@ -6,7 +6,6 @@ C:\Users\teremir\Documents\TestDirmod\quotation-backend\quotation-backend\bin\De
 C:\Users\teremir\Documents\TestDirmod\quotation-backend\quotation-backend\bin\Debug\netcoreapp2.2\quotation-backend.runtimeconfig.dev.json
 C:\Users\teremir\Documents\TestDirmod\quotation-backend\quotation-backend\bin\Debug\netcoreapp2.2\quotation-backend.dll
 C:\Users\teremir\Documents\TestDirmod\quotation-backend\quotation-backend\bin\Debug\netcoreapp2.2\quotation-backend.pdb
-C:\Users\teremir\Documents\TestDirmod\quotation-backend\quotation-backend\obj\Debug\netcoreapp2.2\quotation-backend.csprojAssemblyReference.cache
 C:\Users\teremir\Documents\TestDirmod\quotation-backend\quotation-backend\obj\Debug\netcoreapp2.2\quotation-backend.csproj.CoreCompileInputs.cache
 C:\Users\teremir\Documents\TestDirmod\quotation-backend\quotation-backend\obj\Debug\netcoreapp2.2\quotation-backend.RazorAssemblyInfo.cache
 C:\Users\teremir\Documents\TestDirmod\quotation-backend\quotation-backend\obj\Debug\netcoreapp2.2\quotation-backend.RazorAssemblyInfo.cs

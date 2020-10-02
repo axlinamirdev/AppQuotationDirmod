@@ -1,13 +1,14 @@
 import React from "react"
-import Spinner from "./Spinner";
+import Spinner from "./Spinner"
 
-const CardBody = ({ error, loading, precio}) => {
-	if(error){
-		return <p className="text-danger">{error}</p>
-	}
-
+const CardBody = ({ error, loading, precio }) => {
+	
 	if(loading){
 		return <Spinner />
+	}
+
+	if(error){
+		return <p className="text-danger">{error}</p>
 	}
 
 	return (

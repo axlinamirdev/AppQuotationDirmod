@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
-import moment from 'moment'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
-
+import React, { useEffect } from "react"
+import moment from "moment"
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./App.css"
 
 import CardTasa from "./components/CardTasa"
 import CardBody from "./components/CardBody"

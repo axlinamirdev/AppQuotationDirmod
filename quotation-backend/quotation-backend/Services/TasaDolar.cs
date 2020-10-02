@@ -18,7 +18,7 @@ namespace quotation_backend.Services
             if (response.IsSuccessStatusCode)
             {
                 ResultJson resultado = await response.Content.ReadAsAsync<ResultJson>();
-                cotizar = new Cotizar { Moneda = Parametro.monedaDolar, Precio = resultado.Result.Value };
+                cotizar = new Cotizar { Moneda = Parametro.monedaDolar, Precio = (Math.Round(resultado.Result.Value, 1)) };
             }
             return cotizar;
         }
